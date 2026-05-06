@@ -1,4 +1,4 @@
-/* USAR CSS EM TUDO QUE FOR ENTREGAR AO ISRAEL */
+/* Use Reset CSS em tudo que entregar para o Israel */
 * {
     margin: 0;
     padding: 0;
@@ -8,16 +8,19 @@
 /* Variáveis CSS */
 :root {
     --color-light : #f4f4f4;
-    --color-dark: #222;
+    --color-dark: #111111;
     --color-orange: #ff6600;
+     --color-orange-alpha: rgba(255, 102, 0, .25);
     --spacing-sm: 10px;
     --spacing-md: 20px;
     --spacing-lg: 30px;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
+
+
 body {
     font-family: "Quicksand", sans-serif;
 }
@@ -42,62 +45,59 @@ ul, ol {
     color: var(--color-light);
     height: 100vh;
     padding-inline: var(--spacing-lg);
-    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .4)),
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.4)),
     url(../images/motos/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed;    
 }
 
-.hero-header { 
-   
+.hero-header {
     height: 100px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
 }
 
 .hero-menu {
     display: flex;
-    gap: var(--spacing-md)
-
+    gap: var(--spacing-md);
 }
 
-.cta{
-
+.cta {
     height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     text-align: center;
 }
 
 
-.cta h2{
+.cta h2 {
     font-size: 8vmin;
 }
 
-.cta p{
+.cta p {
     width: 80%;
     line-height: 1.6;
-    text-wrap: balance; 
-
+    text-wrap: balance;
 }
 
-.btn{
+.btn {
     border: 2px solid var(--color-orange);
-    padding: var(--spacing-sm ) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: 80px;
-    background-color: var(--color-orange);
+    background-color: var(--color-orange-alpha);
     transition: .5s;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: transparent;
 }
+
 .icon {
     animation: motinho 2s infinite linear;
 }
@@ -111,8 +111,41 @@ ul, ol {
     50% {
         transform: translateX(20px);
     }
+    
+}
+
+.motos {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.motos h2 {
+    font-size: 6vmin;
+    padding: var(--spacing-lg);
+}
+
+.grid-motos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: var(--spacing-lg);
+}
+
+.moto-item {
+    width: 30%;  /* 30% de 100% do grid-motos */
+    border: 1px solid var(--color-orange-alpha);
+    box-shadow: 1px 1px 10px var(--color-orange-alpha);
+    border-radius: 15px;
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.moto-item img {
+    width: 70%;
+    border-radius: 15px;
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
 }
